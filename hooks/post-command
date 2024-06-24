@@ -128,7 +128,6 @@ dockerImageScan() {
         --rm -it \
         --mount type=bind,src="$WIZ_DIR",dst=/cli,readonly \
         --mount type=bind,src="$PWD",dst=/scan \
-        --mount type=bind,src=/var/run/docker.sock,dst=/var/run/docker.sock,readonly \
         "${wiz_cli_container}" \
         docker scan --image "$IMAGE" \
         --policy-hits-only \
